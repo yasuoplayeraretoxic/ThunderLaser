@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: 'virgo';
+            src: url(virgo.ttf);
+        }
+
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            cursor: none;
+        }
+
+        #canvas {
+            font-family: 'vigro';
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+    <title>Thunder Laser</title>
+</head>
+
+<body oncontextmenu="return false">
+    <canvas id="canvas" ></canvas>
+
+    <script src="Config.js"></script>
+    <!--Flag.js-->
+    <script src="Flag/ColorFlag.js"></script>
+    <script src="Flag/ModeFlag.js"></script>
+    <script src="Flag/PatternFlag.js"></script>
+    <!--Event-->
+    <script src="Event/MouseMoveEvent.js"></script>
+    <!--Class-->
+    <script src="Class/BackGround.js"></script>
+    <script src="Class/Text.js"></script>
+        <script src="Class/Laser.js"></script>
+    <script src="Class/Player.js"></script>
+    <script src="Class/Border.js"></script>
+    <!--Function-->
+    <script src="Function/Initial.js"></script>
+    <script src="Function/Random.js"></script>
+    <script src="Function/Update.js"></script>
+    <script src="Function/Draw.js"></script>
+    <script src="Function/Merger.js"></script>
+    <!--Main.js-->
+    <script src="Main.js"></script>
+
+</body>
+
+</html>
