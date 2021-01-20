@@ -2,7 +2,7 @@
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
 function update() { //更新數據
-   if (++time % 75 === 0) lasers.push(new Laser(merger(colorconfig[colorflag], {
+   if (++time % 75 === 0) lasers.push(new Laser(Object.assign(colorconfig[colorflag], {
       speed: laser_speed,
       w: laser_long * scale,
    }))); //每隔50單位時間加入一個雷射

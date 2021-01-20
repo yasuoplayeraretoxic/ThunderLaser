@@ -8,11 +8,12 @@ class Player { //玩家標點物件
         let def = {
             size_out: 22 * scale, //大圓
             //小圓 = size_out * 13 / 21
+            limitmode: 1, //1 內框 2 外框
 
             x: ww / 2, //初始點為中心
             y: wh / 2, //初始點為中心
-            originX: ww / 2,//向量計算 計算原本位置
-            originY: wh / 2,//向量計算 計算原本位置
+            originX: ww / 2, //向量計算 計算原本位置
+            originY: wh / 2, //向量計算 計算原本位置
 
             lightcolor: '#FDE17C', //背景顏色
             darkcolor: '#FEC400', //框線顏色
@@ -23,29 +24,30 @@ class Player { //玩家標點物件
         }
         Object.assign(def, args);
         Object.assign(this, def);
+        this.top_limit_move = this.top_limit + this.size_out + this.linewidth; //設定移動限制範圍
+        this.left_limit_move = this.left_limit + this.size_out + this.linewidth; //設定移動限制範圍
     }
     draw(patternmode) { //繪圖動作
+        console.log(this.linewidth / scale);
         ctx.fillStyle = this.lightcolor;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
 
-        ctx.strokeStyle = this.darkcolor;
         ctx.lineWidth = this.linewidth;
+        ctx.strokeStyle = this.darkcolor;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
         ctx.stroke();
         ctx.closePath();
 
         patternmode(this);
-
     }
     move() { //修正及移動座標
-        let top_limit_move = this.top_limit + this.size_out + this.linewidth; //設定移動限制範圍
-        let left_limit_move = this.left_limit + this.size_out + this.linewidth; //設定移動限制範圍
-        this.x = Math.min(Math.max(this.x, left_limit_move), ww - left_limit_move); //修正X
-        this.y = Math.min(Math.max(this.y, top_limit_move), wh - top_limit_move); //修正Y
+
+        this.x = Math.min(Math.max(this.x, this.left_limit_move), ww - this.left_limit_move); //修正X
+        this.y = Math.min(Math.max(this.y, this.top_limit_move), wh - this.top_limit_move); //修正Y
     }
     touch() { //碰撞
         canvas_touch.width = this.size_out * 2; //設定碰撞箱寬度

@@ -25,7 +25,4 @@ let modeflag = 2; // 初始進入頁面
 let laser_speed = 6.5; //雷射移動速度
 let laser_frequence = 25; //未完成  雷射頻率
 let laser_long = 90; //雷射長度
-let border_left = 28;//左右邊界偏移及位移限制
-let border_top = 28; //上下邊界偏移及位移限制
 let player_sizeout = 22; //玩家大圓框半徑及碰撞箱
-

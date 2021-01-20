@@ -14,16 +14,7 @@ let patternconfig = {
       ctx.closePath();
    },
    pattern2: function pattern2(Player) {
-      // ctx.rotate(4 / Math.PI);
-      let size_in = Player.size_out * 13 / 21
-      ctx.save();
-      ctx.beginPath();
-      ctx.translate(Player.x, Player.y - Player.size_out + Player.linewidth * 1.5);
-      ctx.rotate(Math.PI / 4);
-      ctx.strokeRect(0, 0, size_in * 2, size_in * 2)
-      ctx.closePath();
-      ctx.restore();
-      // ctx.rotate(-4 / Math.PI)
+
    },
 
 }

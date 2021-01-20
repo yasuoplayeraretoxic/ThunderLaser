@@ -3,8 +3,7 @@
 
 function draw() { //繪圖
    background.draw(); //繪製背景
-   text.draw();
-   outerborder.draw();
+   outerborder.draw(); //繪製外邊界
    border.draw(); //繪製邊界
    player.draw(patternconfig[patternflag]); //繪製玩家
    lasers.forEach(e => e.draw()); //繪製每個雷射
