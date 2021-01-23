@@ -5,6 +5,9 @@
 // pattern2 = 星星
 // pattern3 = 愛心
 // pattern4 = 六角形
+
+let patternflag = 'pattern3'; //玩家圖標選擇設定
+
 let patternconfig = {
    pattern1: function pattern1(Player) {
       ctx.beginPath();
@@ -31,12 +34,12 @@ let patternconfig = {
    pattern3: function pattern3(Player) {
       ctx.save();
 
-      ctx.translate(Player.x,Player.y- 6 *scale)
+      ctx.translate(Player.x,Player.y- 5 *scale)
       ctx.moveTo(0, 0);
-      ctx.bezierCurveTo(0, -5, -5, -20, -25, -20);
-      ctx.bezierCurveTo(-55, -15, -63, 35, 0, 65);
-      ctx.bezierCurveTo(63, 35, 55, -15, 25, -20);
-      ctx.bezierCurveTo(5, -20, 0, -5, 0, -5);
+      ctx.bezierCurveTo(0, -4.5, -4.5, -18, -22.5, -18);
+      ctx.bezierCurveTo(-49.5, -13.5, -56.5, 31.5, 0, 58.5);
+      ctx.bezierCurveTo(56.5, 31.5, 49.5, -13.5, 22.5, -18);
+      ctx.bezierCurveTo(5, -18, 0, -4.5, 0, -4.5);
       ctx.stroke();
 
       ctx.restore();
