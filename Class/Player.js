@@ -28,14 +28,14 @@ class Player { //玩家標點物件
         this.left_limit_move = this.left_limit + this.size_out + this.linewidth; //設定移動限制範圍
     }
     draw(patternmode) { //繪圖動作
-        console.log(this.linewidth / scale);
+        ctx.lineWidth = this.linewidth;
+
         ctx.fillStyle = this.lightcolor;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
 
-        ctx.lineWidth = this.linewidth;
         ctx.strokeStyle = this.darkcolor;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
@@ -45,9 +45,13 @@ class Player { //玩家標點物件
         patternmode(this);
     }
     move() { //修正及移動座標
-
-        this.x = Math.min(Math.max(this.x, this.left_limit_move), ww - this.left_limit_move); //修正X
-        this.y = Math.min(Math.max(this.y, this.top_limit_move), wh - this.top_limit_move); //修正Y
+        if (this.limitmode === 1) {
+            this.x = Math.min(Math.max(this.x, this.left_limit_move), ww - this.left_limit_move); //修正X
+            this.y = Math.min(Math.max(this.y, this.top_limit_move), wh - this.top_limit_move); //修正Y
+        } else {
+            this.x = Math.min(Math.max(this.x, 0), ww); //修正X
+            this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
+        }
     }
     touch() { //碰撞
         canvas_touch.width = this.size_out * 2; //設定碰撞箱寬度
