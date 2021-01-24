@@ -5,7 +5,7 @@ textlist.push(
         x: 0 * scale,
         y: -75 * scale,
         text: 'THUNDER LASER',
-        fontsize: 20 * scale
+        fontsize: 30 * scale
     })),
     HowToPlay = new Text(Object.assign({}, colorconfig[colorflag], {
         x: 0 * scale,

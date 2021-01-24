@@ -1,7 +1,12 @@
 'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
-const canvas_touch = document.createElement('canvas');
+const canvas_touch = document.getElementById('canvas_touch');
 const laser_touch = canvas_touch.getContext('2d');
+laser_touch.globalCompositeOperation = 'destination-out'; //選擇合成方式
+canvas_touch.width = ww;
+canvas_touch.height = wh;
+laser_touch.fillStyle = 'red';
+laser_touch.fillRect(0,0,ww,wh);
 
 class Player { //玩家標點物件
     constructor(args) {
@@ -43,6 +48,15 @@ class Player { //玩家標點物件
         ctx.closePath();
 
         patternmode(this);
+
+
+        //以目前的座標為圓心繪製玩家的碰撞箱
+        laser_touch.fillStyle = 'black';
+        laser_touch.beginPath();
+        laser_touch.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
+        laser_touch.stroke();
+        laser_touch.closePath();
+        this.ans = laser_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length;
     }
     move() { //修正及移動座標
         if (this.limitmode === 1) {
@@ -54,35 +68,16 @@ class Player { //玩家標點物件
         }
     }
     touch() { //碰撞
-        canvas_touch.width = this.size_out * 2; //設定碰撞箱寬度
-        canvas_touch.height = this.size_out * 2; //設定碰撞箱高度
-        //以目前的座標為圓心繪製玩家的碰撞箱
-        laser_touch.beginPath();
-        laser_touch.arc(this.size_out, this.size_out, this.size_out, 0, Math.PI * 2);
-        laser_touch.stroke();
-        laser_touch.closePath();
+
 
         //偵測是否有碰撞
 
         //取得透明度為0的長度
-        let ans = laser_touch.getImageData(0, 0, canvas_touch.width, canvas_touch.height).data.filter((e, i) => e !== 0 && i % 4 === 3).length;
-        laser_touch.globalCompositeOperation = 'destination-out'; //選擇合成方式
-        for (let index = 0; index < lasers.length; index++) { //測試雷射陣列中的每一個雷射
-            let e = lasers[index]; //取得雷射
-            if (Math.sqrt(Math.pow(this.x - e.x - e.hitboxW / 2, 2) + Math.pow(this.y - e.y - e.hitboxH / 2, 2)) <= this.size_out + e.w / 2) {
-                //繪製碰撞箱
-                laser_touch.translate(e.x - this.x + this.size_out, e.y - this.y + this.size_out); //移動標點
-                laser_touch.rotate(e.deg); //轉向
-                laser_touch.fillRect(0, 0, e.w, e.h); //繪製碰撞箱
 
-                // 偵測碰撞集
-                //如果碰撞了回傳true
-                if (ans !== laser_touch.getImageData(0, 0, canvas_touch.width, canvas_touch.height).data.filter((e, i) => e !== 0 && i % 4 === 3).length) {
-                    init();
-                    break;
-                } //是就初始化
-            }
+        if (this.ans !== laser_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length) {
+            init();
 
-        }
+        } //是就初始化
+
     }
 }

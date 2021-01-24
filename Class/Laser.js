@@ -27,6 +27,14 @@ class Laser { //雷射類別
       this.hitboxW = this.w * Math.cos(this.deg); //取得碰撞箱寬度
    }
    draw() { //繪圖動作
+      laser_touch.save();
+
+      laser_touch.translate(this.x, this.y); //移動標點
+      laser_touch.rotate(this.deg); //轉向
+      laser_touch.strokeRect(0, 0, this.w, this.h); //繪製碰撞箱
+
+      laser_touch.restore();
+
       ctx.save();
 
       ctx.beginPath();
