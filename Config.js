@@ -12,14 +12,14 @@ const wh = 360 * scale; //設定著色區高度
 const deviation = (window.innerWidth - ww) / 2 //偏移置中
 canvas.width = window.innerWidth; //設定畫布寬度
 canvas.height = window.innerHeight; //設定畫布高度
-ctx.translate(deviation, 0); //畫布偏移
+ctx.translate(deviation+ 300, 0); //畫布偏移
 ctx.fillRect(0, 0, ww, wh); //設定繪圖區域
 
 ctx_touch.width = ww;
 ctx_touch.height = wh;
 
 ctx.globalCompositeOperation = 'source-atop'; //設定圖片合成效果
-ctx_touch.globalCompositeOperation = 'source-over'; //設定碰撞畫布的合成方式
+ctx_touch.globalCompositeOperation = 'darker'; //設定碰撞畫布的合成方式
 ctx.textBaseline = 'top' //設定文字呈現方式
 
 let lasers = []; //雷射陣列 儲存雷射
