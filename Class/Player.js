@@ -1,12 +1,5 @@
 'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
-const canvas_touch = document.getElementById('canvas_touch');
-const laser_touch = canvas_touch.getContext('2d');
-laser_touch.globalCompositeOperation = 'destination-out'; //選擇合成方式
-canvas_touch.width = ww;
-canvas_touch.height = wh;
-laser_touch.fillStyle = 'red';
-laser_touch.fillRect(0,0,ww,wh);
 
 class Player { //玩家標點物件
     constructor(args) {
@@ -51,12 +44,13 @@ class Player { //玩家標點物件
 
 
         //以目前的座標為圓心繪製玩家的碰撞箱
-        laser_touch.fillStyle = 'black';
-        laser_touch.beginPath();
-        laser_touch.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
-        laser_touch.stroke();
-        laser_touch.closePath();
-        this.ans = laser_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length;
+        ctx_touch.fillStyle = 'black';
+        ctx_touch.beginPath();
+        ctx_touch.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
+        ctx_touch.stroke();
+        ctx_touch.closePath();
+        this.ans = ctx_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length;
+        console.log(this.ans)
     }
     move() { //修正及移動座標
         if (this.limitmode === 1) {
@@ -74,7 +68,7 @@ class Player { //玩家標點物件
 
         //取得透明度為0的長度
 
-        if (this.ans !== laser_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length) {
+        if (this.ans !== ctx_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length) {
             init();
 
         } //是就初始化

@@ -2,6 +2,8 @@
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
 function draw() { //繪圖
+   ctx_touch.fillStyle = 'red';
+   ctx_touch.fillRect(0, 0, ww, wh);
    changemode();
    background.draw(); //繪製背景
    insideborder.draw(); //繪製邊界
