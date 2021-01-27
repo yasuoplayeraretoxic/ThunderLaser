@@ -29,20 +29,6 @@ class Laser { //雷射類別
    draw() { //繪圖動作
       ctx.save();
 
-      ctx.beginPath();
-      ctx.strokeStyle = 'red';
-      ctx.arc(this.t1x, this.t1y, 10, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.closePath();
-
-      ctx.beginPath();
-      ctx.strokeStyle = 'blue';
-      ctx.arc(this.t2x, this.t2y, 10, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.closePath();
-
-
-
       ctx.translate(this.t1x, this.t1y);
       ctx.rotate(this.deg);
 
