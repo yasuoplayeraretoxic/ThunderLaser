@@ -53,7 +53,7 @@ class Player { //玩家標點物件
     }
     touch() { //碰撞
         lasers.forEach(e => {
-            if (e.colliDetect(this.x, this.y, this.size_out) === true) {
+            if (e.colliDetect(this.x, this.y, this.sizeOut) === true) {
                 init();
             }
         });
