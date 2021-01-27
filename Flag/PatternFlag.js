@@ -6,12 +6,12 @@
 // pattern3 = 愛心
 // pattern4 = 六角形
 
-let patternflag = 'pattern3'; //玩家圖標選擇設定
+let patternFlag = 'pattern3'; //玩家圖標選擇設定
 
-let patternconfig = {
+let patternConfig = {
    pattern1: function pattern1(Player) {
       ctx.beginPath();
-      ctx.arc(Player.x, Player.y, Player.size_out * 13 / 22, 0, Math.PI * 2);
+      ctx.arc(Player.x, Player.y, Player.sizeOut * 13 / 22, 0, Math.PI * 2);
       ctx.stroke();
       ctx.closePath();
    },
@@ -19,11 +19,11 @@ let patternconfig = {
       ctx.save();
 
       ctx.translate(Player.x, Player.y);
-      ctx.lineWidth = Player.linewidth;
+      ctx.lineWidth = Player.lineWidth;
       ctx.beginPath();
       for (let i = 1; i <= 5; i++) {
-         ctx.lineTo(Math.cos((18 + 72 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22), -Math.sin((18 + 72 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22));
-         ctx.lineTo(Math.cos((54 + 72 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22) / 2, -Math.sin((54 + 72 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22) / 2);
+         ctx.lineTo(Math.cos((18 + 72 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22), -Math.sin((18 + 72 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22));
+         ctx.lineTo(Math.cos((54 + 72 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22) / 2, -Math.sin((54 + 72 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22) / 2);
 
       }
       ctx.closePath();
@@ -36,11 +36,11 @@ let patternconfig = {
 
       ctx.translate(Player.x, Player.y - 5.5 * scale)
       ctx.moveTo(0, 0);
-      let tempscale = scale * 0.4 ;
-      ctx.bezierCurveTo(0 * tempscale, -4.5 * tempscale, -4.5 * tempscale, -18 * tempscale, -22.5 * tempscale, -18 * tempscale);
-      ctx.bezierCurveTo(-49.5 * tempscale, -13.5 * tempscale, -56.5 * tempscale, 31.5 * tempscale, 0 * tempscale, 58.5 * tempscale);
-      ctx.bezierCurveTo(56.5 * tempscale, 31.5 * tempscale, 49.5 * tempscale, -13.5 * tempscale, 22.5 * tempscale, -18 * tempscale);
-      ctx.bezierCurveTo(5 * tempscale, -18 * tempscale, 0 * tempscale, -4.5 * tempscale, 0 * tempscale, -4.5 * tempscale);
+      let tempScale = scale * 0.4 ;
+      ctx.bezierCurveTo(0 * tempScale, -4.5 * tempScale, -4.5 * tempScale, -18 * tempScale, -22.5 * tempScale, -18 * tempScale);
+      ctx.bezierCurveTo(-49.5 * tempScale, -13.5 * tempScale, -56.5 * tempScale, 31.5 * tempScale, 0 * tempScale, 58.5 * tempScale);
+      ctx.bezierCurveTo(56.5 * tempScale, 31.5 * tempScale, 49.5 * tempScale, -13.5 * tempScale, 22.5 * tempScale, -18 * tempScale);
+      ctx.bezierCurveTo(5 * tempScale, -18 * tempScale, 0 * tempScale, -4.5 * tempScale, 0 * tempScale, -4.5 * tempScale);
       ctx.stroke();
 
       ctx.restore();
@@ -49,11 +49,11 @@ let patternconfig = {
       ctx.save();
 
       ctx.translate(Player.x, Player.y)
-      ctx.lineWidth = Player.linewidth;
+      ctx.lineWidth = Player.lineWidth;
       ctx.moveTo(0, 0);
       ctx.beginPath();
       for (let i = 1; i <= 6; i++) {
-         ctx.lineTo(Math.cos((60 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22), -Math.sin((60 * i) / 180 * Math.PI) * (Player.size_out * 18 / 22));
+         ctx.lineTo(Math.cos((60 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22), -Math.sin((60 * i) / 180 * Math.PI) * (Player.sizeOut * 18 / 22));
       }
       ctx.closePath();
       ctx.stroke();

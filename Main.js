@@ -1,20 +1,20 @@
 'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 //創建背景
-let background = new Background(colorconfig[colorflag]);
+let backGround = new Background(colorConfig[colorFlag]);
 //創建視窗外框
-let outerborder = new Border(Object.assign({},colorconfig[colorflag], {
-   border_left: 0,
-   border_top: 0,
-   linewidth: 4 * scale,
+let outerBorder = new Border(Object.assign({},colorConfig[colorFlag], {
+   borderLeft: 0,
+   borderTop: 0,
+   lineWidth: 4 * scale,
    display: true
 }));
 //創建邊界
-let insideborder = new Border(Object.assign({},colorconfig[colorflag],{display:true}));
+let insideBorder = new Border(Object.assign({},colorConfig[colorFlag],{display:true}));
 //創建玩家
-let player = new Player(Object.assign({},colorconfig[colorflag], {
-   size_out: player_sizeout * scale,
-   limitmode: 2
+let player = new Player(Object.assign({},colorConfig[colorFlag], {
+   sizeOut: playerSizeOut * scale,
+   limitMode: 2
 }));
 
 init(); //初始化

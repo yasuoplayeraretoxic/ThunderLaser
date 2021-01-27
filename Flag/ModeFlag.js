@@ -11,13 +11,13 @@
 // 8.觀看製作人名單
 // 9.詢問是否退出遊戲
 
-let modeflag = 1;
+let modeFlag = 1;
 
-function changemode() {
-    switch (modeflag) {
+function changeMode() {
+    switch (modeFlag) {
         case 1:
-            textlist[0].display = true;
-            insideborder.display = false;
+            textList[0].display = true;
+            insideBorder.display = false;
             break;
         case 2:
             break;
@@ -35,7 +35,6 @@ function changemode() {
             break;
         case 9:
             break;
-
         default:
             break;
     }

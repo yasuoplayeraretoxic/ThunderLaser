@@ -23,7 +23,7 @@ let lasers = []; //雷射陣列 儲存雷射
 let time = 0; //時間紀錄器
 
 //物件參數設定
-let laser_speed = 2; //雷射移動速度
-let laser_frequence = 25; //未完成 雷射頻率
-let laser_length = 90; //雷射長度
-let player_sizeout = 22; //玩家大圓框半徑及碰撞箱
+let laserSpeed = 2; //雷射移動速度
+let laserFrequence = 25; //未完成 雷射頻率
+let laserLength = 90; //雷射長度
+let playerSizeOut = 22; //玩家大圓框半徑及碰撞箱

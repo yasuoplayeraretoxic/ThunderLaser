@@ -10,39 +10,39 @@
 // color7 = 灰色
 // color8 = 蜂蜜蛋糕<3
 
-let colorflag = 'color1'; // 顏色設定
+let colorFlag = 'color1'; // 顏色設定
 
-let colorconfig = {
+let colorConfig = {
    color1: { //黃色
-      darkcolor: '#FEC300',
-      lightcolor: '#FDE17C'
+      darkColor: '#FEC300',
+      lightColor: '#FDE17C'
    },
    color2: { //粉色
-      darkcolor: '#FF8ABC',
-      lightcolor: '#FFCAE1'
+      darkColor: '#FF8ABC',
+      lightColor: '#FFCAE1'
    },
    color3: { //深藍色
-      darkcolor: '#9BAFFD',
-      lightcolor: '#CCD5FF'
+      darkColor: '#9BAFFD',
+      lightColor: '#CCD5FF'
    },
    color4: { //淺藍色
-      darkcolor: '#7CD7FD',
-      lightcolor: '#B8E6FF'
+      darkColor: '#7CD7FD',
+      lightColor: '#B8E6FF'
    },
    color5: { //青綠色
-      darkcolor: '#ADEC19',
-      lightcolor: '#D2F586'
+      darkColor: '#ADEC19',
+      lightColor: '#D2F586'
    },
    color6: { //紫色
-      darkcolor: '#BF77FE',
-      lightcolor: '#E7C4FF'
+      darkColor: '#BF77FE',
+      lightColor: '#E7C4FF'
    },
    color7: { //灰色
-      darkcolor: '#848384',
-      lightcolor: '#D7D7D8'
+      darkColor: '#848384',
+      lightColor: '#D7D7D8'
    },
    color8: { //蜂蜜蛋糕
-      darkcolor: '#9D783A',
-      lightcolor: '#DBB866'
+      darkColor: '#9D783A',
+      lightColor: '#DBB866'
    },
 }
