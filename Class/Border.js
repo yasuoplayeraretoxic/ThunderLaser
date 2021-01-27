@@ -17,9 +17,13 @@ class Border { //邊界類別
    }
    draw() { //繪圖動作
       if (this.display === true) {
+         ctx.save();
+
          ctx.lineWidth = this.lineWidth;
-         ctx.strokeStyle = this.darkcolor;
+         ctx.strokeStyle = this.darkColor;
          ctx.strokeRect(this.borderLeft, this.borderLeft, this.w - this.borderLeft * 2, this.h - this.borderTop * 2)
+
+         ctx.restore();
       }
    }
 }

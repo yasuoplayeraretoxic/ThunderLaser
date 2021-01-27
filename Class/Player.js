@@ -26,6 +26,8 @@ class Player { //玩家標點物件
         this.leftLimitMove = this.leftLimit + this.sizeOut + this.lineWidth; //設定移動限制範圍
     }
     draw(patternMode) { //繪圖動作
+        ctx.save();
+
         ctx.lineWidth = this.lineWidth;
 
         ctx.fillStyle = this.lightColor;
@@ -41,6 +43,8 @@ class Player { //玩家標點物件
         ctx.closePath();
 
         patternMode(this);
+
+        ctx.restore();
     }
     move() { //修正及移動座標
         if (this.limitMode === 1) {

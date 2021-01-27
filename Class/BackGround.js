@@ -10,7 +10,11 @@ class Background { //背景類別
       Object.assign(this, def);
    }
    draw() { //繪圖動作
+      ctx.save();
+
       ctx.fillStyle = this.lightColor;
       ctx.fillRect(0, 0, ww, wh);
+
+      ctx.restore();
    }
 }

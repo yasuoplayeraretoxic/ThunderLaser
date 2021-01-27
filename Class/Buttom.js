@@ -1,25 +1,32 @@
 'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
-class Border { //邊界類別
+class Text { //文字類別
    constructor(args) {
       let def = {
-         display: false,
-         darkColor: '#FEC508', //邊界顏色
-         lineWidth: 2 * scale, //邊界寬度
-         borderLeft: 30 * scale, //左右邊界偏移
-         borderTop: 30 * scale, //上下邊界偏移
-         w: ww, //寬度
-         h: wh //高度
+         display: true,
+         x: ww / 2, //X位置
+         y: wh / 2, //Y位置
+         darkColor: '#FEC508', //字元顏色
+         font: `${args.fontSize}px Virgo`, //設定字元大小及字體
+         text: '', //輸入文字內容
       }
+      Object.assign(def, args);
       Object.assign(this, def);
-      Object.assign(this, args);
    }
    draw() { //繪圖動作
       if (this.display === true) {
-         ctx.lineWidth = this.lineWidth;
-         ctx.strokeStyle = this.darkcolor;
-         ctx.strokeRect(this.borderLeft, this.borderLeft, this.w - this.borderLeft * 2, this.h - this.borderTop * 2)
+         this.w = ctx.measureText(this.text).width; //font已輸入至ctx 以font的相關訊息取得字寬
+         this.h = parseInt(this.font.match(/\d+/)); //正規表達式 從font取得字高
+
+         ctx.save();
+
+         ctx.fillStyle = this.darkColor;
+         ctx.font = this.font;
+         ctx.translate(this.x, this.y);
+         ctx.fillText(this.text, this.x - this.w / 2, this.y - this.h / 2 * 0.8);
+
+         ctx.restore();
       }
    }
 }

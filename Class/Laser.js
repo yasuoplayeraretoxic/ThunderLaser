@@ -71,24 +71,11 @@ class Laser { //雷射類別
       this.t2y = this.t1y + Math.sin(this.deg) * this.length;
    }
    colliDetect(x, y, r) { //碰撞檢測
-      let t1LeftRight = 0; //偵測t1左右
-      let t2LeftRight = 0; //偵測t2左右
-      if ((y - this.t1y) * (this.t1y - this.t2y) - (x - this.t1x) * (this.t2x - this.t1x) > 0) {
-         t1LeftRight = 1;
-      } else {
-         t1LeftRight = -1;
-      }
-      if ((y - this.t2y) * (this.t1y - this.t2y) - (x - this.t2x) * (this.t2x - this.t1x) > 0) {
-         t2LeftRight = 1;
-      } else {
-         t2LeftRight = -1;
-      }
-      let lineBetween = false; //偵測是否在t1t2之間
-      if (t1LeftRight * t2LeftRight === -1) {
-         lineBetween = true;
-      }
+      let t1LeftRight = ((y - this.t1y) * (this.t1y - this.t2y) - (x - this.t1x) * (this.t2x - this.t1x) > 0 ? 1 : -1); //偵測t1左右
+      let t2LeftRight = ((y - this.t2y) * (this.t1y - this.t2y) - (x - this.t2x) * (this.t2x - this.t1x) > 0 ? 1 : -1); //偵測t2左右
+      let lineBetween = t1LeftRight * t2LeftRight === -1; //偵測是否在t1t2之間
       let collision = false;
-      if (lineBetween === true) {
+      if (lineBetween) {
          if (Math.abs((y - this.t1y) * (this.t1x - this.t2x) - (x - this.t1x) * (this.t1y - this.t2y)) / Math.sqrt(Math.pow(this.t1x - this.t2x, 2) + Math.pow(this.t1y - this.t2y, 2)) <= r) {
             collision = true;
          }
@@ -97,6 +84,6 @@ class Laser { //雷射類別
             collision = true;
          }
       }
-      return collision //回傳是否碰撞到
+      return collision; //回傳是否碰撞到
    }
 }

@@ -2,14 +2,14 @@ let textList = [];
 
 textList.push(
     TLTitle = new Text(Object.assign({}, colorConfig[colorFlag], {
-        x: 0 * scale,
-        y: -75 * scale,
+        x: ww / 2,
+        y: wh / 2,
         text: 'THUNDER LASER',
         fontSize: 30 * scale
     })),
     howToPlay = new Text(Object.assign({}, colorConfig[colorFlag], {
         x: 0 * scale,
-        y: -170 * scale,
+        y: 0 * scale,
         text: 'HOW TO PLAY：MOVE YOUR MOUSE AND TRY TO AVOID ALL SHOTS',
         fontSize: 10 * scale
     })),
