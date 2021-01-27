@@ -10,7 +10,7 @@
 // color7 = 灰色
 // color8 = 蜂蜜蛋糕<3
 
-let colorflag = 'color2'; // 顏色設定
+let colorflag = 'color1'; // 顏色設定
 
 let colorconfig = {
    color1: { //黃色

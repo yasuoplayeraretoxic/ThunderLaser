@@ -41,16 +41,6 @@ class Player { //玩家標點物件
         ctx.closePath();
 
         patternmode(this);
-
-
-        //以目前的座標為圓心繪製玩家的碰撞箱
-        ctx_touch.fillStyle = 'black';
-        ctx_touch.beginPath();
-        ctx_touch.arc(this.x, this.y, this.size_out, 0, Math.PI * 2);
-        ctx_touch.stroke();
-        ctx_touch.closePath();
-        this.ans = ctx_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length;
-        console.log(this.ans)
     }
     move() { //修正及移動座標
         if (this.limitmode === 1) {
@@ -62,16 +52,10 @@ class Player { //玩家標點物件
         }
     }
     touch() { //碰撞
-
-
-        //偵測是否有碰撞
-
-        //取得透明度為0的長度
-
-        if (this.ans !== ctx_touch.getImageData(this.x - this.size_out, this.y - this.size_out, this.size_out * 2, this.size_out * 2).data.filter((e, i) => e !== 0 && i % 4 === 3).length) {
-            init();
-
-        } //是就初始化
-
+        lasers.forEach(e => {
+            if (e.colliDetect(this.x, this.y, this.size_out) === true) {
+                init();
+            }
+        });
     }
 }

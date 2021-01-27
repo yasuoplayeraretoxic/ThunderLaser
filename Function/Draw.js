@@ -2,13 +2,11 @@
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
 function draw() { //繪圖
-   ctx_touch.fillStyle = 'red';
-   ctx_touch.fillRect(0, 0, ww, wh);
    changemode();
    background.draw(); //繪製背景
    insideborder.draw(); //繪製邊界
    lasers.forEach(e => e.draw()); //繪製每個雷射
-   textlist.forEach(e => e.draw());
+   textlist.forEach(e => e.draw());//繪製給個文字
    player.draw(patternconfig[patternflag]); //繪製玩家
    outerborder.draw(); //繪製外邊界
    player.touch(); //偵測玩家碰撞

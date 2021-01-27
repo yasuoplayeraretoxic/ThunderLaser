@@ -19,4 +19,4 @@ let player = new Player(Object.assign({},colorconfig[colorflag], {
 
 init(); //初始化
 requestAnimationFrame(draw); //重繪畫布
-setInterval(update, 1000 / 120); //更新物件數據
+setInterval(update, 0); //更新物件數據

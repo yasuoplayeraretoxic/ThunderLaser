@@ -16,9 +16,6 @@ let modeflag = 1;
 function changemode() {
     switch (modeflag) {
         case 1:
-            textlist.forEach(element => {
-                element.display = true
-            });
             textlist[0].display = true;
             insideborder.display = false;
             break;

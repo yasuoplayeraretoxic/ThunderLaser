@@ -18,7 +18,7 @@ let patternconfig = {
    pattern2: function pattern2(Player) {
       ctx.save();
 
-      ctx.translate(Player.x, Player.y)
+      ctx.translate(Player.x, Player.y);
       ctx.lineWidth = Player.linewidth;
       ctx.beginPath();
       for (let i = 1; i <= 5; i++) {
@@ -34,12 +34,13 @@ let patternconfig = {
    pattern3: function pattern3(Player) {
       ctx.save();
 
-      ctx.translate(Player.x,Player.y- 5 *scale)
+      ctx.translate(Player.x, Player.y - 5.5 * scale)
       ctx.moveTo(0, 0);
-      ctx.bezierCurveTo(0, -4.5, -4.5, -18, -22.5, -18);
-      ctx.bezierCurveTo(-49.5, -13.5, -56.5, 31.5, 0, 58.5);
-      ctx.bezierCurveTo(56.5, 31.5, 49.5, -13.5, 22.5, -18);
-      ctx.bezierCurveTo(5, -18, 0, -4.5, 0, -4.5);
+      let tempscale = scale * 0.4 ;
+      ctx.bezierCurveTo(0 * tempscale, -4.5 * tempscale, -4.5 * tempscale, -18 * tempscale, -22.5 * tempscale, -18 * tempscale);
+      ctx.bezierCurveTo(-49.5 * tempscale, -13.5 * tempscale, -56.5 * tempscale, 31.5 * tempscale, 0 * tempscale, 58.5 * tempscale);
+      ctx.bezierCurveTo(56.5 * tempscale, 31.5 * tempscale, 49.5 * tempscale, -13.5 * tempscale, 22.5 * tempscale, -18 * tempscale);
+      ctx.bezierCurveTo(5 * tempscale, -18 * tempscale, 0 * tempscale, -4.5 * tempscale, 0 * tempscale, -4.5 * tempscale);
       ctx.stroke();
 
       ctx.restore();
@@ -59,5 +60,4 @@ let patternconfig = {
 
       ctx.restore();
    },
-
 }
