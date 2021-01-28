@@ -3,5 +3,5 @@
 
 function init() { //初始化
    time = 0; //時間重設為0
-   lasers = []; //清空雷射陣列
+   laserList = []; //清空雷射陣列
 }

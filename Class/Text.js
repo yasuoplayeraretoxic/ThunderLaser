@@ -13,12 +13,15 @@ class Text { //文字類別
       }
       Object.assign(def, args);
       Object.assign(this, def);
-      ctx.font = this.font;
-      this.w = ctx.measureText(this.text).width;
-      this.h = parseInt(this.font.match(/\d+/));
+
    }
    draw() { //繪圖動作
       if (this.display === true) {
+
+         ctx.font = this.font;
+         this.w = ctx.measureText(this.text).width;
+         this.h = parseInt(this.font.match(/\d+/));
+
          ctx.save();
 
          ctx.fillStyle = this.darkColor;

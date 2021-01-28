@@ -55,11 +55,4 @@ class Player { //玩家標點物件
             this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
         }
     }
-    touch() { //碰撞
-        lasers.forEach(e => {
-            if (e.colliDetect(this.x, this.y, this.sizeOut) === true) {
-                init();
-            }
-        });
-    }
 }

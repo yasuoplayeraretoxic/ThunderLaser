@@ -10,5 +10,5 @@ canvas.addEventListener('mousemove', e => { //滑鼠移動事件
 })
 
 canvas.addEventListener('click', e => {
-
+    buttonTouch(player, buttonList);
 })

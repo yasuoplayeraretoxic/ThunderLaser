@@ -11,7 +11,7 @@
 // 8.觀看製作人名單
 // 9.詢問是否退出遊戲
 
-let modeFlag = 1;
+let modeFlag = 4;
 
 function changeMode() {
     switch (modeFlag) {
