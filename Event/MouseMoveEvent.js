@@ -8,5 +8,4 @@ canvas.addEventListener('mousemove', e => { //滑鼠移動事件
 
 canvas.addEventListener('click', e => { //滑鼠點擊事件
     modeFlag = buttonTouch(buttonList); //檢查碰撞並且更新模式
-    console.log(modeFlag);
 })

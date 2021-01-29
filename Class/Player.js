@@ -47,10 +47,10 @@ class Player { //玩家標點物件
         ctx.restore();
     }
     move() { //修正及移動座標
-        if (this.limitMode === 1) {
-            this.x = Math.min(Math.max(this.x, this.leftMimitMove), ww - this.leftLimitMove); //修正X
+        if (this.limitMode === 1) {//內框
+            this.x = Math.min(Math.max(this.x, this.leftLimitMove), ww - this.leftLimitMove); //修正X
             this.y = Math.min(Math.max(this.y, this.topLimitMove), wh - this.topLimitMove); //修正Y
-        } else {
+        } else {//外框
             this.x = Math.min(Math.max(this.x, 0), ww); //修正X
             this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
         }

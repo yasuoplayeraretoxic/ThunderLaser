@@ -70,4 +70,20 @@ class Laser { //雷射類別
       this.t2x = this.t1x + Math.cos(this.deg) * this.length; //更新t2點
       this.t2y = this.t1y + Math.sin(this.deg) * this.length; //更新t2點
    }
+   ColliDetect(x, y, r) { //碰撞檢測
+      let t1LeftRight = ((y - this.t1y) * (this.t1y - this.t2y) - (x - this.t1x) * (this.t2x - this.t1x) > 0 ? 1 : -1); //偵測t1左右
+      let t2LeftRight = ((y - this.t2y) * (this.t1y - this.t2y) - (x - this.t2x) * (this.t2x - this.t1x) > 0 ? 1 : -1); //偵測t2左右
+      let lineBetween = t1LeftRight * t2LeftRight === -1; //偵測是否在t1t2之間
+      let collision = false;
+      if (lineBetween) {
+         if (Math.abs((y - this.t1y) * (this.t1x - this.t2x) - (x - this.t1x) * (this.t1y - this.t2y)) / Math.sqrt(Math.pow(this.t1x - this.t2x, 2) + Math.pow(this.t1y - this.t2y, 2)) <= r) {
+            collision = true;
+         }
+      } else {
+         if (Math.sqrt(Math.pow(x - this.t1x, 2) + Math.pow(y - this.t1y, 2)) <= r || Math.sqrt(Math.pow(x - this.t2x, 2) + Math.pow(y - this.t2y, 2)) <= r) {
+            collision = true;
+         }
+      }
+      return collision; //回傳是否碰撞到
+   }
 }

@@ -14,6 +14,7 @@ let modeConfig = {
     mode1: function mode1() {
         textList[0].display = false;
         insideBorder.display = true;
+        player.limitMode = 1;
     },
     mode2: function mode2() {
 
