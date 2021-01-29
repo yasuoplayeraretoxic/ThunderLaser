@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 // 1.開始頁面
 // 2.進入玩選單
 // 3.進入外觀設定
@@ -15,8 +12,8 @@ let modeFlag = 'mode1';
 
 let modeConfig = {
     mode1: function mode1() {
-        textList[0].display = true;
-        insideBorder.display = false;
+        textList[0].display = false;
+        insideBorder.display = true;
     },
     mode2: function mode2() {
 

@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 function update() { //更新數據
    modeConfig[modeFlag](); //更新modeFlag
    if (++time % 125 === 0) { //每隔一段時間加入一個雷射

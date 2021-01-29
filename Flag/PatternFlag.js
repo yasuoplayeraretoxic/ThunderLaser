@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 // pattern1 = 圓形
 // pattern2 = 星星
 // pattern3 = 愛心

@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 function draw() { //繪圖
    backGround.draw(); //繪製背景
    insideBorder.draw(); //繪製邊界

@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 canvas.addEventListener('mousemove', e => { //滑鼠移動事件
     player.x = player.x + (e.offsetX - player.originX); //更動變化量
     player.y = player.y + (e.offsetY - player.originY); //更動變化量

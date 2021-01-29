@@ -1,6 +1,3 @@
-'use strict';
-/** @type {HTMLCanvasElement} */ // 宣告作業環境
-
 // color1 = 黃色
 // color2 = 粉色
 // color3 = 深藍色
