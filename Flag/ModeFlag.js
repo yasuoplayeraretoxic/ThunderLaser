@@ -11,31 +11,14 @@
 // 8.觀看製作人名單
 // 9.詢問是否退出遊戲
 
-let modeFlag = 4;
+let modeFlag = 'mode1';
 
-function changeMode() {
-    switch (modeFlag) {
-        case 1:
-            textList[0].display = true;
-            insideBorder.display = false;
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            break;
-        case 9:
-            break;
-        default:
-            break;
+let modeConfig = {
+    mode1: function mode1() {
+        textList[0].display = true;
+        insideBorder.display = false;
+    },
+    mode2: function mode2() {
+
     }
 }

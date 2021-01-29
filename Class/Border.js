@@ -4,7 +4,7 @@
 class Border { //邊界類別
    constructor(args) {
       let def = {
-         display: false,
+         display: false, //顯示開關
          darkColor: '#FEC508', //邊界顏色
          lineWidth: 2 * scale, //邊界寬度
          borderLeft: 30 * scale, //左右邊界偏移

@@ -40,7 +40,7 @@ class Laser { //雷射類別
       ctx.stroke();
       ctx.closePath();
 
-      if (patternFlag === 'pattern3' && colorFlag === 'color2') {
+      if (patternFlag === 'pattern3' && colorFlag === 'color2') { //彩蛋 如果顏色是粉紅色 且形狀為愛心則改為箭矢圖案
          ctx.lineWidth = this.lineWidth * 2;
          ctx.beginPath();
          ctx.moveTo(0, 0);
@@ -67,7 +67,7 @@ class Laser { //雷射類別
    update() { //更新位置
       this.t1x += this.vx * this.speed; //單位向量乘上移動係數
       this.t1y += this.vy * this.speed; //單位向量乘上移動係數
-      this.t2x = this.t1x + Math.cos(this.deg) * this.length;
-      this.t2y = this.t1y + Math.sin(this.deg) * this.length;
+      this.t2x = this.t1x + Math.cos(this.deg) * this.length; //更新t2點
+      this.t2y = this.t1y + Math.sin(this.deg) * this.length; //更新t2點
    }
 }

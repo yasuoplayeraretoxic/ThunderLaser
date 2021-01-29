@@ -6,7 +6,7 @@ class Player { //玩家標點物件
         let def = {
             sizeOut: 22 * scale, //大圓
             //小圓 = size_out * 13 / 21
-            limitMode: 1, //1 內框 2 外框
+            limitMode: 1, //移動限制模式：1 內框 2 外框
 
             x: ww / 2, //初始點為中心
             y: wh / 2, //初始點為中心

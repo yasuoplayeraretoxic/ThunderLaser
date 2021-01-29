@@ -9,6 +9,7 @@ canvas.addEventListener('mousemove', e => { //滑鼠移動事件
     player.move(); //玩家修正及更改位置
 })
 
-canvas.addEventListener('click', e => {
-    buttonTouch(player, buttonList);
+canvas.addEventListener('click', e => { //滑鼠點擊事件
+    modeFlag = buttonTouch(buttonList); //檢查碰撞並且更新模式
+    console.log(modeFlag);
 })

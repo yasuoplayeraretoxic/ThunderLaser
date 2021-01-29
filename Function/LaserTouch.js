@@ -1,7 +1,7 @@
-function laserTouch(player,laserList) {
+function laserTouch() {
     //碰撞
     laserList.forEach(e => {
-        if (laserColliDetect(player.x, player.y, player.sizeOut,e) === true) {
+        if (laserColliDetect(player.x, player.y, player.sizeOut, e) === true) { //如果有碰撞則初始化
             init();
         }
     });
