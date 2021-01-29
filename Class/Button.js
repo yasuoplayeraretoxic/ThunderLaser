@@ -55,8 +55,8 @@ class Button { //文字類別
                patternFlag = this.patternFlag;
                break;
             case 'mode':
-               console.log(this.modeFlag);
                modeFlag = this.modeFlag;
+
                break;
          }
       }

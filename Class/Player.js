@@ -6,7 +6,7 @@ class Player { //玩家標點物件
         let def = {
             sizeOut: 22 * scale, //大圓
             //小圓 = size_out * 13 / 21
-            limitMode: 1, //移動限制模式：1 內框 2 外框
+            limitMode: 'inside', //移動限制模式：inside 內框 outside 外框
 
             x: ww / 2, //初始點為中心
             y: wh / 2, //初始點為中心
@@ -47,12 +47,15 @@ class Player { //玩家標點物件
         ctx.restore();
     }
     move() { //修正及移動座標
-        if (this.limitMode === 1) {//內框
-            this.x = Math.min(Math.max(this.x, this.leftLimitMove), ww - this.leftLimitMove); //修正X
-            this.y = Math.min(Math.max(this.y, this.topLimitMove), wh - this.topLimitMove); //修正Y
-        } else {//外框
-            this.x = Math.min(Math.max(this.x, 0), ww); //修正X
-            this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
+        switch (this.limitMode) {
+            case 'inside':
+                this.x = Math.min(Math.max(this.x, this.leftLimitMove), ww - this.leftLimitMove); //修正X
+                this.y = Math.min(Math.max(this.y, this.topLimitMove), wh - this.topLimitMove); //修正Y
+                break;
+            case 'outside':
+                this.x = Math.min(Math.max(this.x, 0), ww); //修正X
+                this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
+                break;
         }
     }
 }

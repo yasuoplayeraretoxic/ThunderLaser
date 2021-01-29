@@ -14,7 +14,7 @@ let insideBorder = new Border(Object.assign({}, colorConfig[colorFlag], {
 //創建玩家
 let player = new Player(Object.assign({}, colorConfig[colorFlag], {
    sizeOut: playerSizeOut * scale,
-   limitMode: 2
+   limitMode: 'outside'
 }));
 
 init(); //初始化

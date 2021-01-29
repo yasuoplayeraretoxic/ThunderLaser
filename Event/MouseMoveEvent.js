@@ -7,5 +7,10 @@ canvas.addEventListener('mousemove', e => { //滑鼠移動事件
 })
 
 canvas.addEventListener('click', e => { //滑鼠點擊事件
-    modeFlag = buttonTouch(buttonList); //檢查碰撞並且更新模式
+    buttonList.forEach(e => { //檢查按鈕點擊
+        if (e.display === true) {
+            e.ColliDetect(player.x, player.y)
+        }
+        console.log(modeFlag)
+    });
 })
