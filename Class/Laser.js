@@ -1,10 +1,8 @@
-'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
 class Laser { //雷射類別
    constructor(args) {
       let def = {
-         darkColor: '#FEC400', //線顏色
          length: 90 * scale, //長度
          lineWidth: 2.5 * scale, //高度
          speed: 6.5, //移動係數
@@ -36,7 +34,7 @@ class Laser { //雷射類別
       ctx.beginPath();
       ctx.lineTo(0, 0);
       ctx.lineTo(this.length, 0);
-      ctx.strokeStyle = this.darkColor;
+      ctx.strokeStyle = nowColor.darkColor;
       ctx.stroke();
       ctx.closePath();
 
@@ -49,7 +47,7 @@ class Laser { //雷射類別
          ctx.lineTo(this.length / 3.5, 0);
          ctx.lineTo(this.length / 4, -this.lineWidth);
          ctx.lineTo(-this.length / 15, -this.lineWidth);
-         ctx.fillStyle = this.darkColor;
+         ctx.fillStyle = nowColor.darkColor;
          ctx.fill();
          ctx.closePath();
 
@@ -57,7 +55,7 @@ class Laser { //雷射類別
          ctx.lineTo(this.length * 1.1, 0);
          ctx.lineTo(this.length * 0.96, this.lineWidth * 2);
          ctx.lineTo(this.length * 0.96, -this.lineWidth * 2);
-         ctx.fillStyle = this.darkColor;
+         ctx.fillStyle = nowColor.darkColor;
          ctx.fill();
          ctx.closePath();
       };
@@ -84,6 +82,11 @@ class Laser { //雷射類別
             collision = true;
          }
       }
-      return collision; //回傳是否碰撞到
+      if (collision === true) {
+         time = 0;
+         laserList = []; //清空雷射陣列
+         modeFlag = 'mode1';
+         modeConfig[modeFlag]();
+      }
    }
 }

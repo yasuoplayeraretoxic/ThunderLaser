@@ -20,6 +20,8 @@ ctx.globalCompositeOperation = 'source-atop'; //設定圖片合成效果
 
 ctx.textBaseline = 'top' //設定文字呈現方式
 
+let nowColor = colorConfig[colorFlag];
+let laserSwitch = false; //雷射開關
 let laserList = []; //雷射陣列 儲存雷射
 let time = 0; //時間紀錄器
 

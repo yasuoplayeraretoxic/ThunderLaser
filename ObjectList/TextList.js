@@ -2,8 +2,8 @@ let textList = [];
 
 textList.push(
     TLTitle = new Text(Object.assign({}, colorConfig[colorFlag], {
-        x: 50 * scale,
-        y: 50 * scale,
+        x: 0,
+        y: 0,
         text: 'THUNDER LASER',
         fontSize: 30 * scale
     })),

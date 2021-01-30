@@ -1,4 +1,7 @@
 function init() { //初始化
-   time = 0; //時間重設為0
-   laserList = []; //清空雷射陣列
+   laserSwitch = false;
+   player.limitMode = 'outside';
+   insideBorder.display = false;
+   textList.forEach(e => e.display = false);
+   buttonList.forEach(e => e.display = false);
 }

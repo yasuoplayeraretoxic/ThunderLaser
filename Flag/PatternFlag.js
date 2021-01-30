@@ -8,7 +8,7 @@ let patternFlag = 'pattern3'; //玩家圖標選擇設定
 let patternConfig = {
    pattern1: function pattern1() { //圓形
       ctx.beginPath();
-      ctx.arc(player.x, player.y, player.sizeOut * 13 / 22, 0, Math.PI * 2);
+      ctx.arc(player.x, player.y, player.r * 13 / 22, 0, Math.PI * 2);
       ctx.stroke();
       ctx.closePath();
    },
@@ -19,8 +19,8 @@ let patternConfig = {
       ctx.lineWidth = player.lineWidth;
       ctx.beginPath();
       for (let i = 1; i <= 5; i++) {
-         ctx.lineTo(Math.cos((18 + 72 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22), -Math.sin((18 + 72 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22));
-         ctx.lineTo(Math.cos((54 + 72 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22) / 2, -Math.sin((54 + 72 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22) / 2);
+         ctx.lineTo(Math.cos((18 + 72 * i) / 180 * Math.PI) * (player.r * 18 / 22), -Math.sin((18 + 72 * i) / 180 * Math.PI) * (player.r * 18 / 22));
+         ctx.lineTo(Math.cos((54 + 72 * i) / 180 * Math.PI) * (player.r * 18 / 22) / 2, -Math.sin((54 + 72 * i) / 180 * Math.PI) * (player.r * 18 / 22) / 2);
 
       }
       ctx.closePath();
@@ -50,7 +50,7 @@ let patternConfig = {
       ctx.moveTo(0, 0);
       ctx.beginPath();
       for (let i = 1; i <= 6; i++) {
-         ctx.lineTo(Math.cos((60 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22), -Math.sin((60 * i) / 180 * Math.PI) * (player.sizeOut * 18 / 22));
+         ctx.lineTo(Math.cos((60 * i) / 180 * Math.PI) * (player.r * 18 / 22), -Math.sin((60 * i) / 180 * Math.PI) * (player.r * 18 / 22));
       }
       ctx.closePath();
       ctx.stroke();

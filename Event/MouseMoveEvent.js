@@ -11,6 +11,10 @@ canvas.addEventListener('click', e => { //滑鼠點擊事件
         if (e.display === true) {
             e.ColliDetect(player.x, player.y)
         }
-        console.log(modeFlag)
+    });
+    colorTicketList.forEach(e => { //檢查按鈕點擊
+        if (e.display === true) {
+            e.ColliDetect(player.x, player.y)
+        }
     });
 })

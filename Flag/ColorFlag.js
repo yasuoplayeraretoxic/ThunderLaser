@@ -43,3 +43,4 @@ let colorConfig = {
       lightColor: '#DBB866'
    },
 }
+

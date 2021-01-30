@@ -1,10 +1,9 @@
-'use strict';
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
 class Player { //玩家標點物件
     constructor(args) {
         let def = {
-            sizeOut: 22 * scale, //大圓
+            r: 22 * scale, //大圓
             //小圓 = size_out * 13 / 21
             limitMode: 'inside', //移動限制模式：inside 內框 outside 外框
 
@@ -13,8 +12,6 @@ class Player { //玩家標點物件
             originX: ww / 2, //向量計算 計算原本位置
             originY: wh / 2, //向量計算 計算原本位置
 
-            lightColor: '#FDE17C', //背景顏色
-            darkColor: '#FEC400', //框線顏色
             lineWidth: 2 * scale, //線寬
 
             leftLimit: 28 * scale, //設定左右限制
@@ -22,27 +19,27 @@ class Player { //玩家標點物件
         }
         Object.assign(def, args);
         Object.assign(this, def);
-        this.topLimitMove = this.topLimit + this.sizeOut + this.lineWidth; //設定移動限制範圍
-        this.leftLimitMove = this.leftLimit + this.sizeOut + this.lineWidth; //設定移動限制範圍
+        this.topLimitMove = this.topLimit + this.r + this.lineWidth; //設定移動限制範圍
+        this.leftLimitMove = this.leftLimit + this.r + this.lineWidth; //設定移動限制範圍
     }
-    draw(patternMode) { //繪圖動作
+    draw(drawPattern) { //繪圖動作
         ctx.save();
 
         ctx.lineWidth = this.lineWidth;
 
-        ctx.fillStyle = this.lightColor;
+        ctx.fillStyle = nowColor.lightColor;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.sizeOut, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
 
-        ctx.strokeStyle = this.darkColor;
+        ctx.strokeStyle = nowColor.darkColor;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.sizeOut, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
         ctx.stroke();
         ctx.closePath();
 
-        patternMode(this);
+        drawPattern(this);
 
         ctx.restore();
     }
