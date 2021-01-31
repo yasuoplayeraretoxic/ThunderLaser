@@ -5,7 +5,7 @@ class Laser { //雷射類別
       let def = {
          length: 90 * scale, //長度
          lineWidth: 2.5 * scale, //高度
-         speed: 6.5, //移動係數
+         speed: 2, //移動係數
       }
       Object.assign(def, args);
       Object.assign(this, def);
@@ -16,7 +16,6 @@ class Laser { //雷射類別
          t1x: rand(-this.length, ww + this.length),
          t1y: [-this.length, wh + this.length][rand(0, 1)]
       }][rand(0, 1)]);
-      //x,y = t1
       this.t2x = this.t1x + Math.cos(this.deg) * this.length; //設定t2點
       this.t2y = this.t1y + Math.sin(this.deg) * this.length; //設定t2點
 
@@ -38,7 +37,7 @@ class Laser { //雷射類別
       ctx.stroke();
       ctx.closePath();
 
-      if (patternFlag === 'pattern3' && colorFlag === 'color2') { //彩蛋 如果顏色是粉紅色 且形狀為愛心則改為箭矢圖案
+      if (patternFlag === 'heart' && colorFlag === 'pink') { //彩蛋 如果顏色是粉紅色 且形狀為愛心則改為箭矢圖案
          ctx.lineWidth = this.lineWidth * 2;
          ctx.beginPath();
          ctx.moveTo(0, 0);
@@ -82,10 +81,9 @@ class Laser { //雷射類別
             collision = true;
          }
       }
-      if (collision === true) {
-         time = 0;
-         laserList = []; //清空雷射陣列
-         modeFlag = 'mode1';
+      if (collision === true) { //如果碰撞到就初始化並且更改旗標
+         init();
+         modeFlag = 'mode5';
          modeConfig[modeFlag]();
       }
    }

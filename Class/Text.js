@@ -23,7 +23,7 @@ class Text { //文字類別
          ctx.fillStyle = nowColor.darkColor;
          ctx.font = this.font;
 
-         ctx.fillText(this.text, this.x - this.w / 2, this.y - this.h /2);
+         ctx.fillText(this.text, this.x - this.w / 2 + 240 * scale, this.y - this.h / 2 + 180 * scale);
 
          ctx.restore();
       }

@@ -1,18 +1,11 @@
-// pattern1 = 圓形
-// pattern2 = 星星
-// pattern3 = 愛心
-// pattern4 = 六角形
-
-let patternFlag = 'pattern3'; //玩家圖標選擇設定
-
 let patternConfig = {
-   pattern1: function pattern1() { //圓形
+   round: function round() { //圓形
       ctx.beginPath();
-      ctx.arc(player.x, player.y, player.r * 13 / 22, 0, Math.PI * 2);
+      ctx.arc(player.x, player.y, player.r * 14 / 22, 0, Math.PI * 2);
       ctx.stroke();
       ctx.closePath();
    },
-   pattern2: function pattern2() { //星星
+   star: function star() { //星星
       ctx.save();
 
       ctx.translate(player.x, player.y);
@@ -28,7 +21,7 @@ let patternConfig = {
 
       ctx.restore();
    },
-   pattern3: function pattern3() { //愛心
+   heart: function heart() { //愛心
       ctx.save();
 
       ctx.translate(player.x, player.y - 5.5 * scale)
@@ -42,7 +35,7 @@ let patternConfig = {
 
       ctx.restore();
    },
-   pattern4: function pattern4() { //六角形
+   hexagon: function hexagon() { //六角形
       ctx.save();
 
       ctx.translate(player.x, player.y)

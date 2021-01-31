@@ -1,45 +1,40 @@
-let colorTicketList = [];
+let colorTicketList = []; //色票陣列
 
 colorTicketList.push(
-    yellowTicket = new ColorTicket(Object.assign({}, {
+    yellowTicket = new ColorTicket({
         x: 100 * scale,
-        y: 195 * scale,
-        colorFlag: 'color1',
-    })),
-    pinkTicket = new ColorTicket(Object.assign({}, {
+        y: 193 * scale,
+        colorFlag: 'yellow',
+    }),
+    pinkTicket = new ColorTicket({
         x: 240 * scale,
-        y: 195 * scale,
-        colorFlag: 'color2',
-    })),
-    blueTicket = new ColorTicket(Object.assign({}, {
+        y: 193 * scale,
+        colorFlag: 'pink',
+    }),
+    blueTicket = new ColorTicket({
         x: 380 * scale,
-        y: 195 * scale,
-        colorFlag: 'color3',
-    })),
-    cyanTicket = new ColorTicket(Object.assign({}, {
+        y: 193 * scale,
+        colorFlag: 'blue',
+    }),
+    cyanTicket = new ColorTicket({
         x: 100 * scale,
-        y: 255 * scale,
-        colorFlag: 'color4',
-    })),
-    greenTicket = new ColorTicket(Object.assign({}, {
+        y: 253 * scale,
+        colorFlag: 'cyan',
+    }),
+    purpleTicket = new ColorTicket({
         x: 240 * scale,
-        y: 255 * scale,
-        colorFlag: 'color5',
-    })),
-    purpleTicket = new ColorTicket(Object.assign({}, {
+        y: 253 * scale,
+        colorFlag: 'purple',
+    }),
+    grayTicket = new ColorTicket({
         x: 380 * scale,
-        y: 255 * scale,
-        colorFlag: 'color6',
-    })),
-    grayTicket = new ColorTicket(Object.assign({}, {
-        x: 170*scale,
-        y: 315*scale,
-        colorFlag: 'color7',
-    })),
-    castellaTicket = new ColorTicket(Object.assign({}, {
-        x: 310*scale,
-        y: 315*scale,
-        colorFlag: 'color8',
-    })),
+        y: 253 * scale,
+        colorFlag: 'gray',
+    }),
+    castellaTicket = new ColorTicket({
+        x: 240 * scale,
+        y: 313 * scale,
+        colorFlag: 'castella',
+    }),
 
 )

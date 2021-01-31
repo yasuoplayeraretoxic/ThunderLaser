@@ -1,19 +1,18 @@
 /** @type {HTMLCanvasElement} */ // 宣告作業環境
 
-class ColorTicket { //背景類別
+class ColorTicket { //色票類別
     constructor(args) {
         let def = {
-            display: false,
-            x: 0,
-            y: 0,
-            r: 15 * scale,
-            colorFlag: 'color1'
+            display: false, //顯示開關
+            x: 0, //X位置
+            y: 0, //Y位置
+            r: 15 * scale, //色票圓半徑
+            colorFlag: 'color1' //回應的顏色
         }
         Object.assign(def, args);
         Object.assign(this, def);
     }
     draw() { //繪圖動作
-        console.log(this.display);
         if (this.display === true) {
             ctx.save();
 
@@ -34,7 +33,7 @@ class ColorTicket { //背景類別
     }
     ColliDetect(x, y) { //線性規劃檢查
         if (this.display === true) {
-            if (Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.r) {
+            if (Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)) < this.r) { //如果碰撞到就更新顏色
                 nowColor = colorConfig[this.colorFlag];
             }
         }

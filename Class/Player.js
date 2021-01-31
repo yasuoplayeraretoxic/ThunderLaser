@@ -3,8 +3,7 @@
 class Player { //玩家標點物件
     constructor(args) {
         let def = {
-            r: 22 * scale, //大圓
-            //小圓 = size_out * 13 / 21
+            r: 22 * scale, //標點半徑
             limitMode: 'inside', //移動限制模式：inside 內框 outside 外框
 
             x: ww / 2, //初始點為中心
@@ -45,11 +44,11 @@ class Player { //玩家標點物件
     }
     move() { //修正及移動座標
         switch (this.limitMode) {
-            case 'inside':
+            case 'inside': //內框限制
                 this.x = Math.min(Math.max(this.x, this.leftLimitMove), ww - this.leftLimitMove); //修正X
                 this.y = Math.min(Math.max(this.y, this.topLimitMove), wh - this.topLimitMove); //修正Y
                 break;
-            case 'outside':
+            case 'outside': //外框限制
                 this.x = Math.min(Math.max(this.x, 0), ww); //修正X
                 this.y = Math.min(Math.max(this.y, 0), wh); //修正Y
                 break;

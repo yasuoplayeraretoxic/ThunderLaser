@@ -19,17 +19,11 @@
 
         #canvas {
             font-family: 'vigro';
-            position: fixed;
-            margin: auto;
-            left: 0;
-            right: 0;
+            position: absolute;
             top: 0;
             bottom: 0;
-        }
-
-        #canvas_touch {
-            position: fixed;
             left: 0;
+            right: 0;
         }
     </style>
     <title>Thunder Laser</title>
@@ -39,13 +33,8 @@
     <canvas id="canvas_touch"></canvas>
     <canvas id="canvas"></canvas>
 
+    <script src="EnviromentalConfig.js"></script>
 
-    <!--Flag.js-->
-    <script src="Flag/ColorFlag.js"></script>
-    <script src="Flag/ModeFlag.js"></script>
-    <script src="Flag/PatternFlag.js"></script>
-    <!--Event-->
-    <script src="Event/MouseMoveEvent.js"></script>
     <!--Class-->
     <script src="Class/BackGround.js"></script>
     <script src="Class/Text.js"></script>
@@ -54,22 +43,29 @@
     <script src="Class/Border.js"></script>
     <script src="Class/Button.js"></script>
     <script src="Class/ColorTicket.js"></script>
+
+    <!--Event-->
+    <script src="Event/MouseMoveEvent.js"></script>
+
     <!--Function-->
     <script src="Function/Initial.js"></script>
     <script src="Function/Random.js"></script>
     <script src="Function/Update.js"></script>
     <script src="Function/Draw.js"></script>
 
-    <script src="Config.js"></script>
+    <!--Flag.js-->
+    <script src="Flag/ColorFlag.js"></script>
+    <script src="Flag/ModeFlag.js"></script>
+    <script src="Flag/PatternFlag.js"></script>
+
     <!--ObjectList-->
     <script src="ObjectList/ButtonList.js"></script>
     <script src="ObjectList/ColorTicketList.js"></script>
     <script src="ObjectList/TextList.js"></script>
 
-
+    <script src="Config.js"></script>
 
     <!--Main.js-->
-
     <script src="Main.js"></script>
 
 </body>
