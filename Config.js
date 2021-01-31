@@ -7,3 +7,10 @@ let playerR = 22; //玩家大圓半徑
 let colorFlag = 'pink'; // 顏色參數
 let modeFlag = 'mode1'; //模式旗標
 let patternFlag = 'heart'; //玩家圖標參數
+
+//紀錄器及開關
+let laserSwitch = false; //雷射開關
+let laserList = []; //雷射陣列 儲存雷射
+let time = 0; //時間紀錄器
+let scoreCount = 0; //分數紀錄器
+let nowColor = colorConfig[colorFlag]; //顏色紀錄器

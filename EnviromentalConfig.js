@@ -18,8 +18,3 @@ ctx.fillRect(0, 0, ww, wh); //設定繪圖區域
 
 ctx.globalCompositeOperation = 'source-atop'; //設定圖片合成效果
 ctx.textBaseline = 'top' //設定文字呈現方式
-
-let laserSwitch = false; //雷射開關
-let laserList = []; //雷射陣列 儲存雷射
-let time = 0; //時間紀錄器
-let scoreCount = 0; //分數紀錄器

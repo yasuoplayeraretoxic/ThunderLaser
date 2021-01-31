@@ -1,20 +1,17 @@
-let nowColor = colorConfig[colorFlag];
+let backGround = new Background(); //創建背景
 
-//創建背景
-let backGround = new Background();
-//創建視窗外框
-let outerBorder = new Border({
+let outerBorder = new Border({ //創建視窗外框
    borderLeft: 0,
    borderTop: 0,
    lineWidth: 6 * scale,
    display: true
 });
-//創建邊界
-let insideBorder = new Border({
+
+let insideBorder = new Border({ //創建邊界
    display: true
 });
-//創建玩家
-let player = new Player({
+
+let player = new Player({ //創建玩家
    r: playerR * scale,
    limitMode: 'outside'
 });

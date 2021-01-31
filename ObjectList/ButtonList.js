@@ -137,7 +137,7 @@ buttonList.push(
         text: 'AGAIN',
         fontSize: 21 * scale,
         x: 0 * scale,
-        y: 65 * scale,
+        y: 55 * scale,
         instruction: function () {
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
