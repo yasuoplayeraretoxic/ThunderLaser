@@ -4,7 +4,7 @@ class Laser { //雷射類別
    constructor(args) {
       let def = {
          length: 90 * scale, //長度
-         lineWidth: 2.5 * scale, //高度
+         lineWidth: 3 * scale, //高度
          speed: 2, //移動係數
       }
       Object.assign(def, args);
@@ -37,7 +37,7 @@ class Laser { //雷射類別
       ctx.stroke();
       ctx.closePath();
 
-      if (patternFlag === 'heart' && colorFlag === 'pink') { //彩蛋 如果顏色是粉紅色 且形狀為愛心則改為箭矢圖案
+      if (patternFlag === 'heart' && nowColor === colorConfig['pink']) { //彩蛋 如果顏色是粉紅色 且形狀為愛心則改為箭矢圖案
          ctx.lineWidth = this.lineWidth * 2;
          ctx.beginPath();
          ctx.moveTo(0, 0);

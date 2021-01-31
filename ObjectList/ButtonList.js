@@ -40,7 +40,7 @@ buttonList.push(
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
             laserSpeed = 1.6;
-            laserFrequence = 160
+            laserFrequence = 200
         }
     }),
     normal = new Button({
@@ -52,7 +52,7 @@ buttonList.push(
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
             laserSpeed = 1.8;
-            laserFrequence = 145
+            laserFrequence = 180
         }
     }),
     difficult = new Button({
@@ -63,8 +63,8 @@ buttonList.push(
         instruction: function () {
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
-            laserSpeed = 2.2;
-            laserFrequence = 130
+            laserSpeed = 2;
+            laserFrequence = 170
         }
     }),
     colorSetting = new Button({
