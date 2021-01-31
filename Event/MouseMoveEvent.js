@@ -7,7 +7,7 @@ canvas.addEventListener('mousemove', e => { //滑鼠移動事件
 })
 
 canvas.addEventListener('click', e => { //滑鼠點擊事件
-    console.log(modeFlag);
+    console.log(modeStack);
     buttonList.forEach(e => { //檢查按鈕點擊
         if (e.display === true) {
             e.ColliDetect(player.x, player.y) //檢查每一個button的碰撞

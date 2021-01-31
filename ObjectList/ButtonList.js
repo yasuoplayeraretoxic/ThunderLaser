@@ -1,7 +1,7 @@
 let buttonList = [] //按鈕陣列
 
 buttonList.push(
-    play = new Button({ //0
+    play = new Button({
         text: 'PLAY',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -11,7 +11,7 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-    appearanceSetting = new Button({ //1
+    appearanceSetting = new Button({
         text: 'APPEARANCE SETTING',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -21,7 +21,7 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-    producerList = new Button({ //2
+    producerList = new Button({
         text: 'PRODUCER LIST',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -31,7 +31,7 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-    easy = new Button({ //3
+    easy = new Button({
         text: 'EASY',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -43,7 +43,7 @@ buttonList.push(
             laserFrequence = 160
         }
     }),
-    normal = new Button({ //4
+    normal = new Button({
         text: 'NORMAL',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -55,7 +55,7 @@ buttonList.push(
             laserFrequence = 145
         }
     }),
-    difficult = new Button({ //5
+    difficult = new Button({
         text: 'DIFFICULT',
         fontSize: 21 * scale,
         x: 0 * scale,
@@ -67,7 +67,7 @@ buttonList.push(
             laserFrequence = 130
         }
     }),
-    colorSetting = new Button({ //6
+    colorSetting = new Button({
         text: 'COLOR SETTING',
         fontSize: 30 * scale,
         x: 0 * scale,
@@ -77,7 +77,7 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-    patternSetting = new Button({ //7
+    patternSetting = new Button({
         text: 'PATTERN SETTING',
         fontSize: 30 * scale,
         x: 0 * scale,
@@ -87,7 +87,7 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-    round = new Button({ //8
+    round = new Button({
         text: 'ROUND',
         fontSize: 21 * scale,
         x: -80 * scale,
@@ -96,7 +96,7 @@ buttonList.push(
             patternFlag = 'round'
         }
     }),
-    heart = new Button({ //9
+    heart = new Button({
         text: 'HEART',
         fontSize: 21 * scale,
         x: -80 * scale,
@@ -105,7 +105,7 @@ buttonList.push(
             patternFlag = 'heart'
         }
     }),
-    star = new Button({ //10
+    star = new Button({
         text: 'STAR',
         fontSize: 21 * scale,
         x: 80 * scale,
@@ -114,7 +114,7 @@ buttonList.push(
             patternFlag = 'star'
         }
     }),
-    hexagon = new Button({ //11
+    hexagon = new Button({
         text: 'HEXAGON',
         fontSize: 21 * scale,
         x: 80 * scale,
@@ -123,53 +123,56 @@ buttonList.push(
             patternFlag = 'hexagon'
         }
     }),
-    menu = new Button({ //12
+    menu = new Button({
         text: 'MENU',
         fontSize: 21 * scale,
         x: 0 * scale,
         y: 105 * scale,
         instruction: function () {
-            modeFlag = 'mode1';
+            modeFlag = modeStack[modeStack.length - 4];
+            modeStack.splice(modeStack.length - 4, 4);
             modeConfig[modeFlag]();
         }
     }),
-    again = new Button({ //13
+    again = new Button({
         text: 'AGAIN',
         fontSize: 21 * scale,
         x: 0 * scale,
+        y: 55 * scale,
+        instruction: function () {
+            modeFlag = modeStack[modeStack.length - 2];
+            modeStack.splice(modeStack.length - 2, 2);
+            modeConfig[modeFlag]();
+        }
+    }),
+    yes = new Button({
+        text: 'YES',
+        fontSize: 21 * scale,
+        x: -50 * scale,
         y: 55 * scale,
         instruction: function () {
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
         }
     }),
-    yes = new Button({ //14
-        text: 'YES',
-        fontSize: 21 * scale,
-        x: 0 * scale,
-        y: 25 * scale,
-        instruction: function () {
-            modeFlag = 'mode4';
-            modeConfig[modeFlag]();
-        }
-    }),
-    no = new Button({ //15
+    no = new Button({
         text: 'NO',
         fontSize: 21 * scale,
-        x: 0 * scale,
-        y: 25 * scale,
+        x: 50 * scale,
+        y: 55 * scale,
         instruction: function () {
             modeFlag = 'mode1';
             modeConfig[modeFlag]();
         }
     }),
-    exit = new Button({ //16
+    exit = new Button({
         text: 'EXIT',
         fontSize: 21 * scale,
-        x: 0 * scale,
-        y: 25 * scale,
+        x: 207 * scale,
+        y: 167 * scale,
         instruction: function () {
-            modeFlag = 'mode4';
+            modeFlag = modeStack[modeStack.length - 2];
+            modeStack.splice(modeStack.length - 2, 2);
             modeConfig[modeFlag]();
         }
     }),

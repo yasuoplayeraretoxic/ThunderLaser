@@ -126,5 +126,17 @@ textList.push(
         y: -170 * scale,
         text: 'ji3vu3cj0 su3 xji6m/3vm0 ',
         fontSize: 10 * scale
-    })
+    }),
+    quitGame1 = new Text({ //21
+        x: 0 * scale,
+        y: -40 * scale,
+        text: 'ARE YOU SURE TO',
+        fontSize: 30 * scale
+    }),
+    quitGame1 = new Text({ //21
+        x: 0 * scale,
+        y: -10 * scale,
+        text: 'QUIT THE GAME?',
+        fontSize: 30 * scale
+    }),
 )
