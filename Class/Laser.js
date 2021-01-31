@@ -87,4 +87,11 @@ class Laser { //雷射類別
          modeConfig[modeFlag]();
       }
    }
+   outscreen() { // 超出螢幕
+      if (this.t1x < -this.length && this.t2x < -this.length) return false; // left
+      else if (this.t1y < -this.length && this.t2y < -this.length) return false; // top
+      else if (this.t1x > ww + this.length && this.t2x > ww + this.length) return false; // right
+      else if (this.t1y > wh + this.length && this.t2y > wh + this.length) return false; // bottom
+      else return true;
+   }
 }
