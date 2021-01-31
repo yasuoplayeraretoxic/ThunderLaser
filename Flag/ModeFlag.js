@@ -93,5 +93,4 @@ let modeConfig = {
         buttonList[14].display = true;
         buttonList[15].display = true;
     },
-
 }
