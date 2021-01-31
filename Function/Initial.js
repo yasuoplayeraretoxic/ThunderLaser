@@ -1,5 +1,5 @@
 function init() { //初始化
-   scoreCount = 0; //分數重置
+   scoreCount = 100; //分數重置
    time = 0; //時間重置
    laserSwitch = false; //關閉雷射
    laserList = []; //清空雷射陣列

@@ -31,8 +31,8 @@ let modeConfig = {
     },
     mode4: function mode4() {
         init();
-        textList[19].x= 0 * scale;
-        textList[19].y= -162.5 * scale;
+        textList[19].x = 0 * scale;
+        textList[19].y = -162.5 * scale;
         textList[19].font = 15 * scale + 'px Virgo';
         textList[19].display = true;
         insideBorder.display = true;
@@ -44,6 +44,10 @@ let modeConfig = {
         textList[19].y = -15 * scale;
         textList[19].font = 40 * scale + 'px Virgo';
         textList[19].display = true;
+        if (textList[19].text.match(/\d+/) >= 100 && laserSpeed === 2.2) {
+            console.log('hi');
+            textList[20].display = true;
+        };
         buttonList[12].display = true;
         buttonList[13].display = true;
     },

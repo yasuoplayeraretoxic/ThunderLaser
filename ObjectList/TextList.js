@@ -121,4 +121,10 @@ textList.push(
         text: 'SCORE：00',
         fontSize: 15 * scale
     }),
+    easterEgg = new Text({ //20
+        x: 0 * scale,
+        y: -170 * scale,
+        text: 'ji3vu3cj0 su3 xji6m/3vm0 ',
+        fontSize: 10 * scale
+    })
 )

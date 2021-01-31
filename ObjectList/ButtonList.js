@@ -173,5 +173,4 @@ buttonList.push(
             modeConfig[modeFlag]();
         }
     }),
-
 )
