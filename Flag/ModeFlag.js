@@ -1,96 +1,72 @@
-// mode1 = 開始頁面
-// mode2 = 進入玩選單
-// mode3 = 進入外觀設定
-// mode4 = 開始遊戲
-// mode5 = 遊戲結束並且出現選單及再一次
-// mode6 = 圖案選擇介面
-// mode7 = 顏色選擇介面
-// mode8 = 觀看製作人名單
-// mode9 = 詢問是否退出遊戲
-
 let modeConfig = {
-    mode1: function mode1() {
+    mode1() { // mode1 = 開始頁面
         modeStack.push(modeFlag);
         init();
-        textList[0].display = true;
-        buttonList[0].display = true;
-        buttonList[1].display = true;
-        buttonList[2].display = true;
-        buttonList[16].display = true;
+        textList = [TXT.TLTitle];
+        buttonList = [BTS.play, BTS.setting, BTS.producer, BTS.exit];
     },
-    mode2: function mode2() {
+    mode2() { // mode2 = 進入玩選單
         modeStack.push(modeFlag);
         init();
-        textList[1].display = true;
-        textList[7].display = true;
-        buttonList[3].display = true;
-        buttonList[4].display = true;
-        buttonList[5].display = true;
-        buttonList[16].display = true;
+        textList = [TXT.howToPlay, TXT.chooseMod];
+        buttonList = [BTS.easy, BTS.normal, BTS.hard, BTS.exit];
     },
-    mode3: function mode3() {
+    mode3() { // mode3 = 進入設定
         modeStack.push(modeFlag);
         init();
-        buttonList[6].display = true;
-        buttonList[7].display = true;
-        buttonList[16].display = true;
+        textList = [];
+        buttonList = [BTS.colorSetting, BTS.patternSetting, BTS.exit];
     },
-    mode4: function mode4() {
+    mode4() { // mode4 = 開始遊戲
         modeStack.push(modeFlag);
         init();
-        textList[19].x = 0 * scale;
-        textList[19].y = -162.5 * scale;
-        textList[19].font = 15 * scale + 'px Virgo';
-        textList[19].display = true;
+        TXT.scoreCounter.unshow();
+        TXT.MVP.unshow();
         insideBorder.display = true;
         laserSwitch = true;
+        TXT.MVP.text = `MVP：${localStorage.getItem(difficulty) ? localStorage.getItem(difficulty) : 0}`; // 顯示歷史最高分
+        TXT.difficulty.text = 'DIFFICULT：' + difficulty; // 顯示難度
+        textList = [TXT.scoreCounter, TXT.MVP, TXT.difficulty];
+        buttonList = [];
         player.limitMode = 'inside';
     },
-    mode5: function mode5() {
+    mode5() { // mode5 = 遊戲結束並且出現選單及再一次
         modeStack.push(modeFlag);
         init();
-        textList[19].y = -15 * scale;
-        textList[19].font = 40 * scale + 'px Virgo';
-        textList[19].display = true;
-        if (textList[19].text.match(/\d+/) >= 100 && laserSpeed === 2.2) {
-            console.log('hi');
-            textList[20].display = true;
+        if (!localStorage.getItem(difficulty) || localStorage.getItem(difficulty) < scoreCount)
+        localStorage.setItem(difficulty, scoreCount);
+        TXT.MVP.text = `MVP：${localStorage.getItem(difficulty)}`;
+        TXT.scoreCounter.show();
+        TXT.MVP.show();
+        if (TXT.scoreCounter.text.match(/\d+/) >= 100 && laserSpeed >= 2) {
+            textList.push(TXT.easterEgg);
         };
-        buttonList[12].display = true;
-        buttonList[13].display = true;
+        textList = [TXT.scoreCounter, TXT.MVP];
+        buttonList = [BTS.menu, BTS.again];
     },
-    mode6: function mode6() {
+    mode6() { // mode6 = 圖案選擇介面
         modeStack.push(modeFlag);
         init();
-        textList[8].display = true;
-        textList[9].display = true;
-        buttonList[8].display = true;
-        buttonList[9].display = true;
-        buttonList[10].display = true;
-        buttonList[11].display = true;
-        buttonList[16].display = true;
+        textList = [TXT.choosePattern];
+        buttonList = [BTS.round, BTS.heart, BTS.star, BTS.hexagon, BTS.exit];
     },
-    mode7: function mode7() {
+    mode7() { // mode7 = 顏色選擇介面
         modeStack.push(modeFlag);
         init();
-        for (let i = 10; i <= 18; i++) {
-            textList[i].display = true
-        }
-        colorTicketList.forEach(e => e.display = true)
-        buttonList[16].display = true;
+        textList = [TXT.chooseColorComb, TXT.yellow, TXT.pink, TXT.blue, TXT.cyan, TXT.purple, TXT.gray, TXT.castella];
+        buttonList = [BTS.exit];
+        colorTicketList.forEach(e => e.display = true);
     },
-    mode8: function mode8() {
+    mode8() { // mode8 = 觀看製作人名單
         modeStack.push(modeFlag);
         init();
-        buttonList[16].display = true;
-        buttonList[16].display = true;
+        textList = [TXT.producer];
+        buttonList = [BTS.exit];
     },
-    mode9: function mode9() {
+    mode9() { // mode9 = 詢問是否退出遊戲
         modeStack.push(modeFlag);
         init();
-        textList[21].display = true;
-        textList[22].display = true;
-        buttonList[14].display = true;
-        buttonList[15].display = true;
+        textList = [TXT.quitGame];
+        buttonList = [BTS.yes, BTS.no];
     },
 }
