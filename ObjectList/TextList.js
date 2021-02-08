@@ -127,7 +127,7 @@ let TXT = {
     producer: new Text({
         x: 0 * scale,
         y: -120 * scale,
-        text: 'CODE\n\nBEANYAN\nJTT.YANG\n\nART\n\nY.DOOOG\nJTT.YANG',
+        text: 'CODE\n\nBEENYAN\nJTT.YANG\n\nART\n\nY.DOOOG\nJTT.YANG',
         fontSize: 30 * scale
     }),
     difficulty: new Text({
