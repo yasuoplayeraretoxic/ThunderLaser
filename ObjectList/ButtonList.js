@@ -53,7 +53,7 @@ let BTS = {
             difficulty = 'normal';
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
-            laserSpeed = 1.8;
+            laserSpeed = 1.75;
             laserFrequence = 190;
         }
     }),
@@ -66,8 +66,8 @@ let BTS = {
             difficulty = 'hard';
             modeFlag = 'mode4';
             modeConfig[modeFlag]();
-            laserSpeed = 2;
-            laserFrequence = 175;
+            laserSpeed = 1.9;
+            laserFrequence = 180;
         }
     }),
     colorSetting: new Button({ // 顏色選擇
