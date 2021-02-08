@@ -19,6 +19,7 @@ canvas.addEventListener('touchmove', e => { // 手機移動事件
 });
 
 window.addEventListener('click', () => { // 滑鼠點擊事件
+    BGM.play();
     buttonList.forEach(e => e.colliDetect()); // 檢查button的碰撞並且執行指令
     colorTicketList.filter(e => e.display).forEach(e => e.colliDetect()); // 檢查color的碰撞
 });

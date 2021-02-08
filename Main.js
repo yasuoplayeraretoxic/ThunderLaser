@@ -20,7 +20,5 @@ window.addEventListener('load', () => {
    modeConfig[modeFlag](); // 初始化
    requestAnimationFrame(draw); // 重繪畫布
    setInterval(update, 0); // 更新物件數據
-   BGM.pause();
-   BGM.currentTime = 0;
-   BGM.play();
+   BGM.play(); //播放BGM
 })
