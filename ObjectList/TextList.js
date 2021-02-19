@@ -77,14 +77,14 @@ let TXT = {
         y: -162.5 * scale,
         text: 'SCORE：0',
         fontSize: 15 * scale,
-        show() {
+        settleShow() {
             Object.assign(this, {
                 x: 0 * scale,
                 y: -15 * scale,
                 font: 40 * scale + 'px Virgo'
             })
         },
-        unshow() {
+        gameShow() {
             Object.assign(this, {
                 x: 70 * scale,
                 y: -162.5 * scale,
@@ -97,14 +97,14 @@ let TXT = {
         y: -162.5 * scale,
         text: 'MVP：0',
         fontSize: 15 * scale,
-        show() {
+        settleShow() {
             Object.assign(this, {
                 x: 0 * scale,
                 y: -70 * scale,
                 font: 50 * scale + 'px Virgo'
             })
         },
-        unshow() {
+        gameShow() {
             Object.assign(this, {
                 x: -70 * scale,
                 y: -162.5 * scale,

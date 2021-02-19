@@ -20,24 +20,27 @@ let modeConfig = {
     mode4() { // mode4 = 開始遊戲
         modeStack.push(modeFlag);
         init();
-        TXT.scoreCounter.unshow();
-        TXT.MVP.unshow();
+        TXT.scoreCounter.gameShow();
+        TXT.MVP.gameShow();
         insideBorder.display = true;
         laserSwitch = true;
         TXT.MVP.text = `MVP：${localStorage.getItem(difficulty) ? localStorage.getItem(difficulty) : 0}`; // 顯示歷史最高分
         TXT.difficulty.text = 'DIFFICULT：' + difficulty; // 顯示難度
-        textList = [TXT.scoreCounter, TXT.MVP, TXT.difficulty];
+        textList = [TXT.scoreCounter, TXT.MVP, TXT.difficulty]
         buttonList = [];
         player.limitMode = 'inside';
     },
     mode5() { // mode5 = 遊戲結束並且出現選單及再一次
         modeStack.push(modeFlag);
         init();
-        if (!localStorage.getItem(difficulty) || localStorage.getItem(difficulty) < scoreCount)
-        localStorage.setItem(difficulty, scoreCount);
+        if (!localStorage.getItem(difficulty) || localStorage.getItem(difficulty) < scoreCount){
+            console.log(scoreCount);
+            localStorage.setItem(difficulty, scoreCount);
+        }
+        scoreCount = 0; // 分數重置
         TXT.MVP.text = `MVP：${localStorage.getItem(difficulty)}`;
-        TXT.scoreCounter.show();
-        TXT.MVP.show();
+        TXT.scoreCounter.settleShow();
+        TXT.MVP.settleShow();
         if (TXT.scoreCounter.text.match(/\d+/) >= 100 && laserSpeed >= 2) {
             textList.push(TXT.easterEgg);
         };

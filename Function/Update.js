@@ -6,12 +6,12 @@ function update() { // 更新數據
          scoreCount += 1; //分數+1
          shootSoundEffect.pause(); //聲音暫停
          shootSoundEffect.currentTime = 0; //重製聲音
+         shootSoundEffect.play();//播放聲音
          time = 0; // 雷射計時器間重置
          laserList.push(new Laser({ // 新增雷射
             speed: laserSpeed * scale,
             length: laserLength * scale,
          }));
-         shootSoundEffect.play();
       };
       laserList = laserList.filter(e => e.outscreen()); // 刪除超出螢幕的雷射
       laserList.forEach(e => e.colliDetect(player.x, player.y, player.r)); // 檢查雷射碰撞
