@@ -20,6 +20,9 @@ class Laser { // 雷射類別
       this.deg = Math.atan2(player.y - this.t1y, player.x - this.t1x); // 透過斜率取得朝向角度
       this.vx = Math.cos(this.deg); // 設定單位向量
       this.vy = Math.sin(this.deg); // 設定單位向量
+      shootSoundEffect.pause(); //聲音暫停
+      shootSoundEffect.currentTime = 0; //重製聲音
+      shootSoundEffect.play(); //播放聲音
    }
    draw() { // 繪圖動作
       ctx.save();

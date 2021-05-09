@@ -48,6 +48,9 @@ class Button { // 按鈕類別
    colliDetect() { // 碰撞執行指令
       if (this.touch()) { // 如果有碰撞就執行按鈕的指令
          this.instruction();
+         clickButtonSoundEffect.pause(); //聲音暫停
+         clickButtonSoundEffect.currentTime = 0.00; //重製聲音
+         clickButtonSoundEffect.play(); //播放聲音
       }
    }
    mouseHoverDetect() { //當游標放在按鈕上...
