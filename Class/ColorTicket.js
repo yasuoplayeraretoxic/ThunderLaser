@@ -38,6 +38,6 @@ class ColorTicket { // 色票類別
         }
     }
     mouseHoverDetect() { //當游標放在按鈕上...
-        this.scale = this.touch() ? 1.2 : 1; // 碰到放大
+        this.scale = this.touch() ? 1.25 : 1; // 碰到放大
     }
 }

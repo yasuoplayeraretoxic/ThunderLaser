@@ -23,9 +23,9 @@ let patternConfig = {
    heart: () => { // 愛心
       ctx.save();
 
-      ctx.translate(player.x, player.y - 5.5 * scale);
+      ctx.translate(player.x, player.y - 5.5 * scale*player.r/22/scale);
       ctx.moveTo(0, 0);
-      let tempScale = scale * 0.4;
+      let tempScale = scale * 0.4  *player.r/22/scale;
       ctx.bezierCurveTo(0 * tempScale, -4.5 * tempScale, -4.5 * tempScale, -18 * tempScale, -22.5 * tempScale, -18 * tempScale);
       ctx.bezierCurveTo(-49.5 * tempScale, -13.5 * tempScale, -56.5 * tempScale, 31.5 * tempScale, 0 * tempScale, 58.5 * tempScale);
       ctx.bezierCurveTo(56.5 * tempScale, 31.5 * tempScale, 49.5 * tempScale, -13.5 * tempScale, 22.5 * tempScale, -18 * tempScale);

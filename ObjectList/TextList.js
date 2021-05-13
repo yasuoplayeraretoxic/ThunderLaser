@@ -1,8 +1,8 @@
 let TLTitle = new Text({
     x: 0 * scale,
-    y: -90 * scale,
+    y: -80 * scale,
     text: 'THUNDER LASER',
-    fontSize: 35 * scale
+    fontSize: 42 * scale
 });
 let yellow = new Text({
     x: -140 * scale,
@@ -60,9 +60,9 @@ let howToPlay = new Text({
 });
 let chooseMod = new Text({
     x: 0 * scale,
-    y: -70 * scale,
-    text: 'CHOOSE THE MODE YOU WANT',
-    fontSize: 25 * scale
+    y: -75 * scale,
+    text: 'CHOOSE THE MODE\nYOU WANT',
+    fontSize: 30 * scale
 });
 let chooseColorComb = new Text({
     x: 0 * scale,

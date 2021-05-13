@@ -23,7 +23,6 @@ let modeConfig = {
         textList = gamingTextList;
         buttonList = [];
         insideBorder.display = true;
-        laserSwitch = true;
         gamingMvp.text = `MVP：${localStorage.getItem(difficulty) ? localStorage.getItem(difficulty) : 0}`; // 顯示歷史最高分
         gamingDifficulty.text = 'DIFFICULT：' + difficulty; // 顯示難度
         player.limitMode = 'inside';
@@ -35,7 +34,7 @@ let modeConfig = {
             localStorage.setItem(difficulty, scoreCount);
         }
         menuOrAgainMvp.text = `MVP：${localStorage.getItem(difficulty)}`; //更改分數最高的MVP數值
-        if (scoreCount >= 10 && difficulty == 'hard') {
+        if (scoreCount >= 100 && difficulty == 'hard') {
             textList = menuOrAgainTextList.concat([easterEgg]);
         } else {
             textList = menuOrAgainTextList;

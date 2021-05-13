@@ -18,7 +18,7 @@ let setting = new Button({ // 設定
         modeConfig[modeFlag]();
     }
 });
-let producer = new Button({ // 製作人員清單
+let producer = new Button({ //製作人員清單
     text: 'PRODUCER',
     fontSize: 16 * scale,
     x: -183 * scale,
@@ -37,8 +37,9 @@ let easy = new Button({ // 簡單模式
         difficulty = 'easy';
         modeFlag = 'mode4';
         modeConfig[modeFlag]();
-        laserSpeed = 1.6;
-        laserFrequence = 200;
+        laserSpeed = 1.3;
+        laserFrequence = 230;
+        bigLaserFrequence = 310;
     }
 });
 let normal = new Button({ // 普通模式
@@ -50,8 +51,9 @@ let normal = new Button({ // 普通模式
         difficulty = 'normal';
         modeFlag = 'mode4';
         modeConfig[modeFlag]();
-        laserSpeed = 1.75;
-        laserFrequence = 190;
+        laserSpeed = 1.45;
+        laserFrequence = 220;
+        bigLaserFrequence = 280;
     }
 });
 let hard = new Button({ // 困難模式
@@ -63,8 +65,9 @@ let hard = new Button({ // 困難模式
         difficulty = 'hard';
         modeFlag = 'mode4';
         modeConfig[modeFlag]();
-        laserSpeed = 1.9;
-        laserFrequence = 180;
+        laserSpeed = 1.6;
+        laserFrequence = 210;
+        bigLaserFrequence = 250;
     }
 });
 let colorSetting = new Button({ // 顏色選擇

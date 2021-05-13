@@ -1,7 +1,8 @@
 function draw() { // 繪圖
    backGround.draw(); // 繪製背景
    insideBorder.draw(); // 繪製邊界
-   if (laserSwitch)laserList.forEach(e => e.draw()); // 如果為遊戲中則繪製每個雷射
+   if (modeFlag=="mode4")laserList.forEach(e => e.draw()); // 如果為遊戲中則繪製每個雷射
+   if (modeFlag=="mode4")bigLaserList.forEach(e => e.draw()); // 如果為遊戲中則繪製每個雷射
    textList.forEach(e => e.draw()); // 繪製每個文字
    buttonList.forEach(e => e.draw()); // 繪製每個按鈕
    if (modeFlag == 'mode7'){

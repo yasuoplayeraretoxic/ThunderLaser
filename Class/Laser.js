@@ -1,7 +1,7 @@
 class Laser { // 雷射類別
    constructor(args) {
       let def = {
-         length: 90 * scale, // 長度
+         length: 120 * scale, // 長度
          lineWidth: 3 * scale, // 高度
          speed: 2, // 移動係數
       }
@@ -86,11 +86,5 @@ class Laser { // 雷射類別
          modeFlag = 'mode5';
          modeConfig[modeFlag]();
       }
-   }
-   outscreen() { // 超出螢幕
-      // 左 上 右 下
-      if (this.t1x < -this.length && this.t2x < -this.length || this.t1y < -this.length && this.t2y < -this.length || this.t1x > ww + this.length && this.t2x > ww + this.length || this.t1y > wh + this.length && this.t2y > wh + this.length) {
-         return false;
-      } else return true;
    }
 }
